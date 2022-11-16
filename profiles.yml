@@ -1,0 +1,10 @@
+dbt_bgcflow:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'dbt_bgcflow.duckdb'
+      threads: 2
+      extensions:
+        - parquet
+      external_root: "../data_warehouse"

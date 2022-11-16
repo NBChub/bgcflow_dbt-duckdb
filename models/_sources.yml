@@ -1,0 +1,43 @@
+version: 2
+sources:
+  - name: bgcflow_warehouse
+    schema: bgcflow_v0.5.1
+    meta:
+      external_location: "../data_warehouse/6.1.1/{name}.parquet"
+    tables:
+      - name: cdss
+      - name: dna_sequences
+      - name: regions
+  
+  - name: bgcflow_tables
+    schema: bgcflow_v0.5.1
+    tables:
+      - name: df_gtdb_meta
+      - name: df_antismash
+        meta:
+          external_location: "../tables/{name}_*.csv"
+      - name: df_checkm_stats
+      - name: df_deeptfactor
+      - name: df_ncbi_meta
+      - name: df_seqfu_stats
+    meta: 
+      external_location: "../tables/{name}.csv"
+
+  - name: bgcflow_bigslice
+    schema: bgcflow_v0.5.1
+    tables:
+      - name: gcf_summary
+      - name: query_network
+    meta: 
+      external_location: "../bigslice/query_as*/{name}.csv"
+
+  - name: bgcflow_bigscape
+    schema: bgcflow_v0.5.1
+    tables:
+      - name: df_clusters_0.30
+      - name: df_families_0.30
+      - name: df_family_presence_0.30
+      - name: df_known_0.30   
+      - name: df_network_0.30    
+    meta: 
+      external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv"
