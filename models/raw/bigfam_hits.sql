@@ -1,9 +1,9 @@
 WITH src_bigfam_hits AS (
-    SELECT * FROM {{ source('bgcflow_bigslice', 'gcf_summary') }}
+    SELECT * FROM read_csv_auto({{ source('bgcflow_bigslice', 'gcf_summary') }}, header=True)
 ),
 
 stg_bigfam_gcf_hits AS (
-    SELECT 
+    SELECT
         gcf_id AS bigfam_id,
         core_member,
         putative_member,

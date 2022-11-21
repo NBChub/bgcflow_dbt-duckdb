@@ -1,5 +1,5 @@
 WITH src_bigscape_mibig_hits AS (
-    SELECT * FROM {{ source('bgcflow_bigscape', 'df_known_0.30') }}
+    SELECT * FROM read_csv_auto({{ source('bgcflow_bigscape', 'df_known') }}, header=True)
 ),
 
 stg_bigscape_mibig_hits AS (
