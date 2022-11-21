@@ -27,7 +27,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
-seeds: 
+seeds:
   +docs:
     node_color: '#cd7f32'
 
@@ -44,4 +44,3 @@ models:
       +materialized: view
     +docs:
       node_color: 'gold'
-
