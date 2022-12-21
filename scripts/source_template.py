@@ -60,7 +60,12 @@ def create_dbt_source_config(
                 ] = template_location
             else:
                 logging.warning(f"More than 1 table is found! {table}")
-                raise
+                try:
+                    logging.info(f"Getting table within cutoff: {bigscape_cutoff}")
+                    table = [i for i in table if bigscape_cutoff in str(i)]
+                    logging.debug(str(table))
+                except:
+                    raise
             logging.debug("Moving on...")
 
     logging.info(f"Writing to output: {outfile}")
