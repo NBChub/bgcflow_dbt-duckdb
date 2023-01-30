@@ -41,6 +41,6 @@ models:
   dbt_bgcflow:
     raw:
       # Config indicated by + and applies to all files under models/example/
-      +materialized: view
+      +materialized: table
     +docs:
       node_color: 'gold'
