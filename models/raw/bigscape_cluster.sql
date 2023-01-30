@@ -10,7 +10,7 @@ stg_bigscape_cluster AS (
         bigscape_class,
         accn_id,
         "gcf_0.30" AS gcf,
-        "Clan Number" AS clan_number,
+        --"Clan Number" AS clan_number,
         "fam_id_0.30" AS fam_id,
         "fam_type_0.30" AS fam_type,
         "fam_known_compounds_0.30" AS fam_known_compounds
