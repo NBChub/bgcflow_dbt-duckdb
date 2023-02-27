@@ -2,7 +2,7 @@ version: 2
 sources:
   - name: bgcflow_warehouse
     description: Parquet files extracted from antiSMASH json.
-    schema: bgcflow_v0.5.1
+    schema: bgcflow_v0.6.1
     meta:
       external_location: "templates/data_warehouse/{name}.parquet"
     tables:
@@ -26,7 +26,7 @@ sources:
           - build-database
 
   - name: bgcflow_tables
-    schema: bgcflow_v0.5.1
+    schema: bgcflow_v0.6.1
     meta:
       external_location: "templates/tables/{name}*.csv"
     tables:
@@ -37,7 +37,7 @@ sources:
           - default
       - name: df_antismash
         meta:
-          external_location: "../tables/{name}*.csv"
+          external_location: "../tables/{name}*_bgc.csv"
         tags:
           - antismash
       - name: df_checkm_stats
@@ -60,9 +60,14 @@ sources:
           external_location: "../tables/{name}*.csv"
         tags:
           - seqfu
+      - name: df_arts_as
+        meta:
+          external_location: "../tables/{name}*.csv"
+        tags:
+          - seqfu
 
   - name: bgcflow_bigslice
-    schema: bgcflow_v0.5.1
+    schema: bgcflow_v0.6.1
     meta:
       external_location: "templates/bigslice/query/{name}.csv"
     tables:
@@ -78,7 +83,7 @@ sources:
           - bigslice
 
   - name: bgcflow_bigscape
-    schema: bgcflow_v0.5.1
+    schema: bgcflow_v0.6.1
     meta:
       external_location: "templates/bigscape/*{name}.csv"
     tables:

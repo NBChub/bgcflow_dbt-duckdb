@@ -17,8 +17,8 @@ stg_genomes AS(
     SELECT
         src_genomes.genome_id,
         stg_taxa.tax_id,
-        --src_genomes.source,
-        --src_genomes.strain,
+        src_genomes.source,
+        src_genomes.strain,
         --src_genomes.bgcs_count,
         --src_genomes.bgcs_on_contig_edge,
     FROM src_genomes, stg_taxa

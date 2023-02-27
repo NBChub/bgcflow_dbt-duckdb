@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: genomes
+    description: Information on a genome
+    columns:
+      - name: genome_id
+        description: Primary key.
+        tests:
+          - not_null
+          - unique
+          #- accepted_values:
+          #    values: ['custom', 'ncbi', 'patric']
+      - name: tax_id
+        description: Foreign key to taxa table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('taxa')
+              field: tax_id
+  - name: taxa
+    description: taxonomy information
+    columns:
+      - name: tax_id
+        description: Primary key
+        tests:
+          - not_null
+          - unique
+  - name: seqfu
+    description: Sequence statistics
+    columns:
+      - name: genome_id
+        description: Foreign key to genomes table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('genomes')
+              field: genome_id
+  - name: raw_regions
+    description: AntiSMASH BGC regions
+    columns:
+      - name: region_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique
+  - name: raw_dna_sequences
+    description: Information of each contigs
+    columns:
+      - name: sequence_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique 
+      - name: genome_id
+        description: Foreign key to genomes table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('genomes')
+              field: genome_id
+  - name: raw_cdss
+    description: Information of CDS
+    columns:
+      - name: cds_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique
+  - name: checkm
+    description: CheckM information
+    columns:
+      - name: genome_id
+        description: Foreign Key to genomes table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('genomes')
+              field: genome_id
+  - name: bigscape_cluster
+    description: GCF information created through BiG-SCAPE
+    columns:
+      - name: genome_id
+        description: Foreign Key to genomes table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('genomes')
+              field: genome_id
