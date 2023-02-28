@@ -36,7 +36,7 @@ models:
           - relationships:
               to: ref('genomes')
               field: genome_id
-  - name: raw_regions
+  - name: regions
     description: AntiSMASH BGC regions
     columns:
       - name: region_id
@@ -44,7 +44,7 @@ models:
         tests:
           - not_null
           - unique
-  - name: raw_dna_sequences
+  - name: dna_sequences
     description: Information of each contigs
     columns:
       - name: sequence_id
@@ -59,7 +59,7 @@ models:
           - relationships:
               to: ref('genomes')
               field: genome_id
-  - name: raw_cdss
+  - name: cdss
     description: Information of CDS
     columns:
       - name: cds_id
@@ -67,6 +67,12 @@ models:
         tests:
           - not_null
           - unique
+      - name: region_id
+        description: Foreign key to region table
+        tests:
+          - relationships:
+              to: ref('region_id')
+              field: region_id
   - name: checkm
     description: CheckM information
     columns:
