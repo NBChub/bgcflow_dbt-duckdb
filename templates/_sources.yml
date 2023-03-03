@@ -37,7 +37,7 @@ sources:
           - default
       - name: df_antismash
         meta:
-          external_location: "../tables/{name}*_bgc.csv"
+          external_location: "../tables/{name}*_summary.csv"
         tags:
           - antismash
       - name: df_checkm_stats
