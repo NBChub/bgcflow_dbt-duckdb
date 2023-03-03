@@ -51,7 +51,7 @@ models:
         description: Primary Key
         tests:
           - not_null
-          - unique 
+          - unique
       - name: genome_id
         description: Foreign key to genomes table
         tests:
@@ -67,12 +67,12 @@ models:
         tests:
           - not_null
           - unique
-      - name: region_id
-        description: Foreign key to region table
-        tests:
-          - relationships:
-              to: ref('region_id')
-              field: region_id
+      #- name: region_id
+      #  description: Foreign key to region table
+      #  tests:
+      #    - relationships:
+      #        to: ref('regions')
+      #        field: region_id
   - name: checkm
     description: CheckM information
     columns:
@@ -93,3 +93,50 @@ models:
           - relationships:
               to: ref('genomes')
               field: genome_id
+  - name: bigfam_hits
+    description: List of BiG-FAM hits
+    columns:
+      - name: bigfam_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique
+  - name: bigfam_network
+    description: BiG-SLICE query result
+    columns:
+      - name: bigfam_id
+        description: Foreign Key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bigfam_hits')
+              field: bigfam_id
+      - name: bgc_id
+        description: Foreign Key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bigscape_cluster')
+              field: bgc_id
+  - name: bigscape_network
+    description: BiG-SLICE query result
+    columns:
+      - name: bigscape_edge_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique
+      - name: clustername_1
+        description: Foreign Key
+        #tests:
+        #  - not_null
+        #  - relationships:
+        #      to: ref('bigscape_cluster')
+        #      field: bgc_id
+      - name: clustername_2
+        description: Foreign Key
+        #tests:
+        #  - not_null
+        #  - relationships:
+        #      to: ref('bigscape_cluster')
+        #      field: bgc_id

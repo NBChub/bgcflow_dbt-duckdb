@@ -15,10 +15,10 @@ stg_taxa AS (
 
 stg_genomes AS(
     SELECT
-        src_genomes.genome_id,
-        stg_taxa.tax_id,
-        src_genomes.source,
-        src_genomes.strain,
+        src_genomes.genome_id as genome_id,
+        stg_taxa.tax_id as tax_id,
+        src_genomes.source as source,
+        src_genomes.strain as strain,
         --src_genomes.bgcs_count,
         --src_genomes.bgcs_on_contig_edge,
     FROM src_genomes, stg_taxa
@@ -26,4 +26,4 @@ stg_genomes AS(
         src_genomes.genome_id = stg_taxa.genome_id
 )
 
-SELECT * FROM stg_genomes
+SELECT genome_id, tax_id, source, strain FROM stg_genomes
