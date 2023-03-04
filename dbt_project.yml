@@ -44,3 +44,5 @@ models:
       +materialized: table
     +docs:
       node_color: 'gold'
+
+on-run-start: "PRAGMA memory_limit='30GB'"

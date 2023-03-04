@@ -1,9 +1,9 @@
 WITH src_taxa AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_tables', 'df_gtdb_meta') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_tables', 'df_gtdb_meta') }}
 ),
 
 src_genomes AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_tables', 'df_antismash') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_tables', 'df_antismash') }}
 ),
 
 stg_taxa AS (
