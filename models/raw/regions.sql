@@ -4,15 +4,19 @@ WITH src_regions AS (
 
 stg_regions AS (
     SELECT
-        region_id,
+        bgc_id as region_id,
+        genome_id,
+        region,
         accession,
-        region_number,
-        location,
         start_pos,
         end_pos,
         contig_edge,
         product,
-        rules,
+        region_length,
+        most_similar_known_cluster_id,
+        most_similar_known_cluster_description,
+        most_similar_known_cluster_type,
+        similarity
     FROM src_regions
 )
 

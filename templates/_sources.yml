@@ -20,7 +20,7 @@ sources:
       - name: regions
         description: Detected BGC regions extracted from antiSMASH json file
         meta:
-          external_location: "../data_warehouse/{{as_version}}/{name}.parquet"
+          external_location: "../data_warehouse/tables/*{name}*.parquet"
         tags:
           - build-database
 
