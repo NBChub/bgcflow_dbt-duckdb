@@ -8,3 +8,14 @@ dbt_bgcflow:
       extensions:
         - parquet
       external_root: "../data_warehouse"
+    prod:
+      dbname: dbt_bgcflow
+      type: postgres
+      threads: 2
+      host: localhost
+      port: 5432
+      user: <user id>
+      pass: <password>
+      extensions:
+        - parquet
+      external_root: "../data_warehouse"
