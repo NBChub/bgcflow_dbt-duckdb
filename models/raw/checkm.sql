@@ -1,5 +1,5 @@
 WITH src_checkm AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_tables', 'df_checkm_stats') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_tables', 'df_checkm_stats') }}
 ),
 
 stg_checkm AS (

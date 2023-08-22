@@ -1,5 +1,5 @@
 WITH src_bigscape_cluster AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_bigscape', 'df_clusters') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_bigscape', 'df_clusters') }}
 ),
 
 stg_bigscape_cluster AS (

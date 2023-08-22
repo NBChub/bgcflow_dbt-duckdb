@@ -1,5 +1,5 @@
 WITH src_bigscape_network AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_bigscape', 'df_network') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_bigscape', 'df_network') }}
 ),
 
 stg_bigscape_network AS (
