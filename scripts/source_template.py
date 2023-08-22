@@ -29,7 +29,6 @@ def create_dbt_source_config(
     sources = source_template["sources"]
     for num_s, s in enumerate(sources):
         logging.info(f"Finding tables from source: {s['name']}")
-        logging.debug(f"Schema is: {s['schema']}")
         template_location = s["meta"]["external_location"]
         for num_t, t in enumerate(s["tables"]):
             name = t["name"]

@@ -1,5 +1,5 @@
 WITH src_bigfam_network as (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_bigslice', 'query_network') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_bigslice', 'query_network') }}
 ),
 
 stg_bigfam_network as (

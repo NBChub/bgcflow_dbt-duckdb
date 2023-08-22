@@ -32,32 +32,37 @@ sources:
     tables:
       - name: df_gtdb_meta
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - default
       - name: df_antismash
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*_summary.parquet"
         tags:
           - antismash
       - name: df_checkm_stats
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - checkm
       - name: df_deeptfactor
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - deeptfactor
       - name: df_ncbi_meta
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - default
       - name: df_seqfu_stats
         meta:
-          external_location: "../../tables/{name}*.csv"
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
+        tags:
+          - seqfu
+      - name: df_arts_as
+        meta:
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - seqfu
 
@@ -68,12 +73,12 @@ sources:
     tables:
       - name: gcf_summary
         meta:
-          external_location: "../../bigslice/query_as_{{as_version}}/{name}.csv"
+          external_location: "../../data_warehouse/bigslice/{name}.parquet"
         tags:
           - bigslice
       - name: query_network
         meta:
-          external_location: "../../bigslice/query_as_{{as_version}}/{name}.csv"
+          external_location: "../../data_warehouse/bigslice/{name}.parquet"
         tags:
           - bigslice
 
@@ -84,21 +89,21 @@ sources:
     tables:
       - name: df_clusters
         meta:
-          external_location: "../../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
+          external_location: "../../data_warehouse/bigscape/*_{name}_{{bigscape_cutoff}}.parquet"
         tags:
           - bigscape
       - name: df_families
         meta:
-          external_location: "../../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
+          external_location: "../../data_warehouse/bigscape/*_{name}_{{bigscape_cutoff}}.parquet"
         tags:
           - bigscape
       - name: df_known
         meta:
-          external_location: "../../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
+          external_location: "../../data_warehouse/bigscape/*_{name}_{{bigscape_cutoff}}.parquet"
         tags:
           - bigscape
       - name: df_network
         meta:
-          external_location: "../../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
+          external_location: "../../data_warehouse/bigscape/*_{name}_{{bigscape_cutoff}}.parquet"
         tags:
           - bigscape

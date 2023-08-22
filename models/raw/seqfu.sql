@@ -1,5 +1,5 @@
 WITH src_seqfu AS (
-    SELECT * FROM read_csv_auto({{ source('bgcflow_tables', 'df_seqfu_stats') }}, header=True)
+    SELECT * FROM {{ source('bgcflow_tables', 'df_seqfu_stats') }}
 ),
 
 stg_seqfu AS(
