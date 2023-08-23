@@ -1,5 +1,5 @@
 WITH src_regions AS (
-    SELECT * FROM {{ source('bgcflow_warehouse', 'regions') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_regions_antismash') }}
 ),
 
 stg_regions AS (
@@ -13,10 +13,6 @@ stg_regions AS (
         contig_edge,
         product,
         region_length,
-        most_similar_known_cluster_id,
-        most_similar_known_cluster_description,
-        most_similar_known_cluster_type,
-        similarity
     FROM src_regions
 )
 
