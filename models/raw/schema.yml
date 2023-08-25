@@ -74,22 +74,22 @@ models:
         tests:
           - not_null
           - unique
-      #- name: region_id
-      #  description: Foreign key to region table
-      #  tests:
-      #    - relationships:
-      #        to: ref('regions')
-      #        field: region_id
-#  - name: checkm
-#    description: CheckM information
-#    columns:
-#      - name: genome_id
-#        description: Foreign Key to genomes table
-#        tests:
-#          - not_null
-#          - relationships:
-#              to: ref('genomes')
-#              field: genome_id
+      - name: region_id
+        description: Foreign key to region table
+        tests:
+          - relationships:
+              to: ref('regions')
+              field: region_id
+  - name: checkm
+    description: CheckM information
+    columns:
+      - name: genome_id
+        description: Foreign Key to genomes table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('genomes')
+              field: genome_id
   - name: bigscape_cluster
     description: GCF information created through BiG-SCAPE
     columns:
