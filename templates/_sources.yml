@@ -38,6 +38,11 @@ sources:
           external_location: "../../data_warehouse/tables/{name}*_summary.parquet"
         tags:
           - antismash
+      - name: df_regions_antismash
+        meta:
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
+        tags:
+          - antismash
       - name: df_checkm_stats
         meta:
           external_location: "../../data_warehouse/tables/{name}*.parquet"
