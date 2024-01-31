@@ -48,5 +48,21 @@ dbt docs generate
 dbt docs serve
 ```
 
+### Exporting to newer version of DuckDB
+Right now newer version of DuckDB is not backward compatible. To migrate the data to newer version, use the script [`export_duckdb.py`](scripts/export_duckdb.py):
+```bash
+$ python scripts/export_duckdb.py -h
+usage: export_duckdb.py [-h] [--database_filename DATABASE_FILENAME] [--export_directory EXPORT_DIRECTORY]
+
+Export a DuckDB database.
+
+options:
+  -h, --help            show this help message and exit
+  --database_filename DATABASE_FILENAME
+                        The filename of the DuckDB database to export.
+  --export_directory EXPORT_DIRECTORY
+                        The directory to save the exported database.
+```
+
 # Credits
 This dbt template was inspired adapted from [jaffle_shop_duckdb](https://github.com/dbt-labs/jaffle_shop_duckdb) example.
