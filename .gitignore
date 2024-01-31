@@ -12,3 +12,5 @@ env/
 seeds/
 *.ipynb_checkpoints/
 models/sources.yml
+exported_database/
+duckdb_fdw/
