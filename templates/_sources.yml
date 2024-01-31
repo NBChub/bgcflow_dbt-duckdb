@@ -68,6 +68,11 @@ sources:
           external_location: "../../data_warehouse/tables/{name}*.parquet"
         tags:
           - seqfu
+      - name: df_mibig_bgcs
+        meta:
+          external_location: "../../data_warehouse/tables/{name}*.parquet"
+        tags:
+          - mibig
 
   - name: bgcflow_bigslice
     meta:
