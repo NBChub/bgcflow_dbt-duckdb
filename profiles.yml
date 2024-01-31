@@ -9,14 +9,14 @@ dbt_bgcflow:
         - parquet
       external_root: "../data_warehouse"
     prod:
-      dbname: dbt_bgcflow
-      schema: bgcflow
+      dbname: bgcflow
+      schema: public
       type: postgres
       threads: 2
       host: localhost
       port: 5432
-      user: <user id>
-      pass: <password>
+      user: "{{ env_var('DBT_USER') }}"
+      pass: "{{ env_var('DBT_PASSWORD') }}"
       extensions:
         - parquet
       external_root: "../data_warehouse"
