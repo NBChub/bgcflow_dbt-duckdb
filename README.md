@@ -62,6 +62,13 @@ options:
                         The filename of the DuckDB database to export.
   --export_directory EXPORT_DIRECTORY
                         The directory to save the exported database.
+  --format {parquet,csv}
+                        The format to export the database in.
+```
+
+### [WIP] Migrating to PostgreSQL
+```bash
+bash scripts/migrate_postgres_workflow.sh
 ```
 
 # Credits
