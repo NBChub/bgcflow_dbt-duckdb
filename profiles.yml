@@ -10,6 +10,7 @@ dbt_bgcflow:
       external_root: "../data_warehouse"
     prod:
       dbname: dbt_bgcflow
+      schema: bgcflow
       type: postgres
       threads: 2
       host: localhost
