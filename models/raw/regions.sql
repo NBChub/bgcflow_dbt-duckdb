@@ -13,6 +13,10 @@ stg_regions AS (
         contig_edge,
         product,
         region_length,
+        most_similar_known_cluster_id,
+        most_similar_known_cluster_description,
+        most_similar_known_cluster_type,
+        similarity
     FROM src_regions
 )
 
