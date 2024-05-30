@@ -2,7 +2,7 @@
 An ELT framework to build a DuckDB OLAP database from [BGCFlow run](https://github.com/NBChub/bgcflow) using dbt.
 
 ## Publication
-> Matin Nuhamunada, Omkar S. Mohite, Patrick V. Phaneuf, Bernhard O. Palsson, and Tilmann Weber. (2023). BGCFlow: Systematic pangenome workflow for the analysis of biosynthetic gene clusters across large genomic datasets. bioRxiv 2023.06.14.545018; doi: [https://doi.org/10.1101/2023.06.14.545018](https://doi.org/10.1101/2023.06.14.545018)
+> Matin Nuhamunada, Omkar S Mohite, Patrick V Phaneuf, Bernhard O Palsson, Tilmann Weber, BGCFlow: systematic pangenome workflow for the analysis of biosynthetic gene clusters across large genomic datasets, Nucleic Acids Research, 2024;, gkae314, [https://doi.org/10.1093/nar/gkae314](https://doi.org/10.1093/nar/gkae314)
 
 ### Usage
 #### Clone
@@ -37,7 +37,7 @@ Activate the virtual environment and configures source location by running this 
 
 ```python
 project_dir="bgcflow/data/processed/<my_project>"
-python $project_dir/dbt_bgcflow/scripts/source_template.py templates/_sources.yml models/sources.yml "6.1.1" "0.30"
+python $project_dir/bgcflow_dbt-duckdb/scripts/source_template.py templates/_sources.yml models/sources.yml "7.1.0" "0.30"
 ```
 
 #### Run DBT
