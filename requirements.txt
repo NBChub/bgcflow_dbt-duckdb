@@ -1,2 +1,2 @@
-dbt-duckdb==1.6.0
-dbt-metabase==0.9.15
+dbt-duckdb==1.7.4
+dbt-metabase==1.3.0
