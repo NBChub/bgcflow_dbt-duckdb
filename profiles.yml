@@ -4,6 +4,7 @@ dbt_bgcflow:
     dev:
       type: duckdb
       path: 'dbt_bgcflow.duckdb'
+      schema: bgcflow
       threads: 2
       extensions:
         - parquet
